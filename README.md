@@ -9,4 +9,4 @@ I have decided that, in addition to completing a coding challenge a day, I'll al
 
 **Warning: The story may contain spoilers to Deltarune.**
 
-Well, I just spoiled which game it is... [Go check it out!](https://deltarune.com)
+Well, I just spoiled which game it is... [Go check out the game!](https://deltarune.com)
