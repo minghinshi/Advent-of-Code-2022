@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="noindex" name="robots">
+    <title>Day 1</title>
+    <link href="assets/css/journal.css?1668902517" rel="stylesheet" type="text/css">
+</head>
+
+<body class="dark">
+    <script src="assets/javascripts/jquery.js"></script>
+    <div class="wrapper">
+        <h1 class="header"><img alt="Welcome to holidaygirl1225's game secrets, glitches, and theories blog!" class="welcome" src="/assets/images/welcome.png"><img alt="Happy Holidays" class="ornament" src="/assets/images/xmas.png"></h1>
+        <main>
+            <div class="post">
+                <p>Guess what? I woke up on a ship again. Shouldn’t have jinxed it yesterday… Or maybe it’s gonna happen every year? That’s a disturbing thought…</p>
+                <p>I saw so many familiar faces — Kris was there, Captain Elf was there, the scientists were there (although they weren’t wearing lab coats)… Did I end up in the same dark world?</p>
+                <p>“So these 10 bars of chocolate — that’s 2,000 Calories in total. And this box of animal crackers…” Captain Elf scribbled down on a piece of paper.</p>
+                <p>“Hi!” I tried to catch their attention. They did look behind.</p>
+                <p>“Hey. We’re here again.” Kris looked for the nutrition label on a pack of biscuits.</p>
+                <p>“Right. Welcome back! Us elves are very grateful for your efforts in saving Christmas last year.”</p>
+                <p>“I dropped the sleigh keys… Everything wouldn’t have happened if I didn’t.” Yes, I wanted to help, but it’s more like I deserved having to solve 50 puzzles…</p>
+                <p>“It’s alright. This year will go easier, because you’ll just need to help deliver the presents. In fact, we’re on a trip to get some infused star fruits to help reindeers like you restore energy while you travel from home to home.”</p>
+                <p>(Did I help deliver presents in hometown? I don’t remember…)</p>
+                <p>“What are you doing?” I got curious.</p>
+                <p>“We’re checking the number of Calories on food. When we arrive at the jungle to get the fruits later, it’s gonna be a long journey, so we need to make sure we’ve brought enough. Okay, this one’s 3,000 Calories…”</p>
+                <p>“Should I help?”</p>
+                <p>“Well, you should probably take a break, so that you’re well rested enough to deliver presents. We can handle this just fine.”</p>
+                <p>“But I have nothing else to do…” Imagine being trapped in a room for 25 days…</p>
+                <p>“Uh…”</p>
+                <p>Kris looked at me, then back to the elf. “Yeah, we can help.”</p>
+                <p>“Alright, alright. Help us record the number of Calories.”</p>
+                <p>I picked up a can of vegetables… Aren’t these the ones I had for lunch last year?</p>
+                <p>“By the way…” Kris jotted down the Calorie count. “Each elf has a basket that carries lots of food. We need to group the Calories from the same basket together.”</p>
+                <p>“Got it.”</p>
+                <p>It took us half an hour to get through all the baskets. Some of the food doesn’t have a nutritional label, so we could only guess. (Anyone knows how many Calories a broccoli contains? Tell me in the comments, please!)</p>
+                <p>“And this last one has…” The elf looked around a massive box of candy canes. Like, really big. “5,000 Calories. Okay, here’s where your expertise comes in. I suppose one of you would be enough to handle this task… But now that both of you are here, hopefully it’ll be trivial.”</p>
+                <p>“Programming?” Kris looked a bit nervous.</p>
+                <p>“Yes, programming! Can you help me find which basket has the most Calories, and how many Calories it contains? Just in case some of us run out of food, we can ask that elf for more.”</p>
+                <p>“Isn’t that the same as…”</p>
+                <p>I was nervous too. It’s not a big problem if I have to do a lot of coding puzzles again. But if they get as hard as those from last year… I’m not sure if I can pull it off. Guess I can only try my best…</p>
+                <p>“Okay…” I scanned the surroundings, looking for a computer.</p>
+                <p>“We should have a laptop upstairs that you can use. Just like before, it should come with tools that help you write code in Python, Java, and many other languages. Ask us if you need to install something else, though.”</p>
+                <p>“Sure.” I have a Python programming examination after Christmas… Might as well get some practice, right?</p>
+                <p>“Also, I’ll quickly compile the data and send it over to you as a text file. As per usual, it’ll be called ‘Day01.txt’. Okay?”</p>
+                <p>“Okay, thanks.” I headed for the stairs and Kris followed.</p>
+                <p>“And you too! Thanks for coming this year!”</p>
+                <hr>
+                <p>“Noelle, do you think this will happen every year?” Kris asked me while we waited for the data to arrive. “I don't like this…”</p>
+                <p>Like, if every year I get transported away from my hometown, into a dark world where I help out a bunch of elves through programming, and I have to solve 50 puzzles that get harder and harder… </p>
+                <p>It's gonna mess up our lives. We skipped so many lessons… I could barely secure my grades in the finals. And as I said yesterday, Kris and I almost missed my birthday party… (I hope I can solve the puzzles quick enough this time, otherwise I might miss it for real!)</p>
+                <p>But I guess it isn’t all bad either… The elves are so nice here, even though they’re a bit demanding. And Kris… I get to spend more time with them, right? Can we be friends again…?</p>
+                <p>I was losing my train of thought, and Kris was totally ready to catch me off-guard.</p>
+                <p>“Hey, we’ve got the data.”</p>
+                <p>“What? Oh, uh… I… Let’s get started, then.”</p>
+                <hr>
+                <p>Since it looks like I’m about to do a lot of puzzles, I might as well share my thinking process here. The list of Calories looks something like this:</p>
+                <pre>1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000</pre>
+                <p>Each line with a number represents the number of Calories from a food item. Food from the same basket is grouped together and separated by a blank line. So there’s 5 baskets here. (I actually needed to handle more baskets than this, but here’s a smaller example to help you understand!)</p>
+                <p>To get the basket with the most Calories, I need to split up the data into baskets, calculate the total Calories in each basket, and store that in a list. Something like this:</p>
+			<pre>[6000, 4000, 11000, 24000, 10000]</pre>
+			<p>Then I find the maximum value of this list, and we’re done! Not too bad, right? (For now…)</p>
+			<hr>
+			<p>So we did just that, and managed to solve the puzzle in less than 5 minutes. We went back downstairs to report to Captain Elf. (It felt all too familiar…)</p>
+			<p>“Got the answer?”</p>
+			<p>“Yeah, about 67,000 Calories.”</p>
+			<p>If I were to guess, we’re not done yet. There’s always a second part. Every single time.</p>
+			<p>“Hmm, about right. Yeah. Now that I think about it though…”</p>
+			<p>Here it comes…</p>
+			<p>“It’s not a great idea if everyone asks that one elf to share their food. They’ll run out of food really quickly, and then we’ll have no idea what to do. So instead, how about this? Let’s find the top 3 elves carrying the most Calories, and see how many Calories they’ve carried in total. That way, we could have a larger reserve, right?”</p>
+			<p>“Yeah, shouldn’t be too hard to find out. Let’s go back, Kris.”</p>
+			<p>Well… I’m not going to pretend that I’m surprised.</p>
+			<hr>
+			<p>I guess the second part shouldn’t have been that hard, but… I struggled with finding the sum of the 3 largest numbers in the Calories list. At first, I thought that I could get the largest number in the list, add that to the total, and then remove it from the list. If I do that 3 times, I’ll get what I want, right?</p>
+			<p>Well, it works, but… it’s a bit clumsy.</p>
+			<p>That’s when Kris thought of a really good idea. We just need to sort the list in descending order, then take the sum of the first 3 items in the list. It’s really easy to do in Python:</p>
+			<pre>return sum(sorted(list, reversed=True)[:3])</pre>
+			<p>It can be done in just one line. Thanks, Kris!</p>
+			<hr>
+			<p>“Alright, you’re back. How many Calories do they carry?”</p>
+			<p>“Almost 200,000. Should be enough, right?”</p>
+			<p>“Yeah, should be. Then I’ll ask these 3 elves in case we need more food. Thanks for your help! Go take a break now.”</p>
+			<p>We waved goodbye to Captain Elf and went back to our rooms. “Here we go again…” Kris sighed.</p>
+			<p>It’s gonna be another long journey. But maybe… we can do this.</p>
+            </div>
+        </main>
+    </div>
+    <script src="assets/javascripts/reallyplayer.js"></script>
+</body>
+
+</html>
