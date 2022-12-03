@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="noindex" name="robots">
+    <title>Day 3</title>
+    <link href="assets/css/journal.css?1668902517" rel="stylesheet" type="text/css">
+</head>
+
+<body class="dark">
+    <script src="assets/javascripts/jquery.js"></script>
+    <div class="wrapper">
+        <h1 class="header"><img alt="Welcome to holidaygirl1225's game secrets, glitches, and theories blog!" class="welcome" src="/assets/images/welcome.png"><img alt="Happy Holidays" class="ornament" src="/assets/images/xmas.png"></h1>
+        <main>
+            <div class="post">
+                <p>The elves… They took the rest of the day to figure out who’s the winner… </p>
+                <p>Anyways, Kris got 35th place! I thought the guide would not work out at all. Guess not! (Or maybe they just got lucky…)</p>
+                <p>Thanks to Captain Elf, I also have my own tent now! It’s close to the food storage as promised, and close to Kris’ tent as well.</p>
+                <p>Early in the morning, some of the other elves were running into the ship and out of it, carrying backpacks with them and piling them up somewhere on the beach. And once again, Kris and Captain Elf were talking. (Is this gonna happen every day?)</p>
+                <p>“The thing is… so far, every backpack I’ve checked so far has a kind of item that’s placed in both compartments. Which is not nice, because… Hello, Noelle.”</p>
+                <p>(Gosh, every time I show up, I just interrupt the Captain…)</p>
+                <p>“Hi! Did I miss much?”</p>
+                <p>“Not really. We’re checking our rucksacks right now to make sure we’ve brought all the stuff, but while we’re doing that, we found that backpacks are not correctly organized. So for today, you can help us sort them out.”</p>
+                <p>“Okay… How?”</p>
+                <p>“We’ve produced a list of items in each backpack, which I’ll send to you later…” He took out a clipboard. “Each line here is 1 backpack, okay? We’re using letters to represent the items. We have 52 kinds of items, so uppercase and lowercase letters would work well.”</p>
+                <p>“Or poker cards,” Kris added. (Sure, Kris… Sure.)</p>
+                <p>“Well… I mean… Let’s just keep going. Each backpack has 2 compartments which carry the same number of items, so for the sake of convenience they’re written on the same line. The first half is 1 compartment, the second half is another.”</p>
+                <p>(Convenient for them, but… I’ll need to write more lines of code to split the lines XD)</p>
+                <p>“Normally, items of the same type need to be placed in the same compartment. But, we found in every backpack, there’s always 1 type of item that’s in both compartments. So we need to find out what that item is, and put them back in the same section on the backpack.”</p>
+                <p>“That’s it?”</p>
+                <p>“Yep. While we’re checking the bags, perhaps you can help us write a program to automatically find the duplicate items in each bag. That could help save time.”</p>
+                <p>“Got it. I’ll do that now.”</p>
+                <p>Just as I headed back to the ship and Kris followed after, the elf stopped us. “The laptop’s right here. I brought it out of the ship, ‘cause we’re about to get into the jungle.”</p>
+                <p>“Okay, thanks!”</p>
+                <p>We took the laptop and sat down on the beach under the warm sun. Listening to the waves, we began to ponder…</p>
+                <hr>
+                <p>Just kidding, it’s not that poetic! It’s pretty straightforward so we didn’t have to think much. First, we need to split each bag in half, so we find the middle, and use Python’s list slicing to extract that part of the list:</p>
+                <pre>mid = len(string) // 2
+first_half, second_half = string[:mid], string[mid:]</pre>
+                <p>(Why must Python be so convenient? I used Java last year, and it’s so hard to go back…)</p>
+                <p>How do we find the same item that appears in both strings? We use sets! They’re useful for finding similarities and differences between groups of items. To find the same item, we use the <a href=https://en.wikipedia.org/wiki/Intersection_(set_theory)>intersection</a>:</p>
+                <pre>same_items = set.intersection(set(first_half), second_half)
+same_items = set(first_half).intersection(second_half)
+same_items = set(first_half) & set(second_half)</pre>
+                <p>(These 3 lines do the same thing, but watch out for when you need to convert a string into a set, and when you don’t!)</p>
+                <p>To actually extract out the item we want from the set, we use a dirty trick. We can change the set into a list, and then get the first item. (The list should only have 1 item anyway!)</p>
+                <pre>item = list(same_items)[0]</pre>
+                <p>And we’re done!</p>
+                <hr>
+                <p>When Kris and I went to find Captain Elf, the helpers were still busy taking out stuff from the backpacks for checking. They also seem to be sticking some Santa Claus stickers on some of them…</p>
+                <p>“Captain, we’ve found the list of items! It’s here.” I carefully turned the laptop around to show him the screen.</p>
+                <p>“Thanks. You can upload the list of items to our intranet and I’ll take a look at it later. Anyways, you came just in time. We have-”</p>
+                <p>“A new problem?” I swear, it’s getting too predictable.</p>
+                <p>“It’s not that much different from the last one. Here’s the deal: we’re exploring the jungle in groups of 3. To identify who’s in which group, there’ll be one and only one item type that will be shared in all 3 backpacks, and we’ll also put a sticker on it. We’re doing that right now, so I’ll need you to help find this common item in each group.”</p>
+                <p>“Do I have to find out which bags belong to the same groups first?”</p>
+                <p>“No, it’s been done for you. Every 3 lines in the document I gave you is 1 group. So lines 1-3 is group 1, lines 4-6 is group 2, and so on.”</p>
+                <p>“Okay. Back in a sec!”</p>
+                <hr>
+                <p>The logic is mostly the same, but we have the additional challenge of splitting the list into groups of 3, and finding the intersection of 3 items. To get groups of 3, we abuse Python’s syntax sugar again:</p>
+                <pre>for i in range(0, len(list), 3):
+    group_of_three = list[i:i+3]</pre>
+                <p>The range function counts up by 3 every loop, and the slicing groups every 3 strings in a list. Just… look at how convenient that is.</p>
+                <p>To intersect 3 strings, we convert all of them to sets, then use set.intersection() because it can handle multiple sets: (Don’t forget to use * to pass multiple arguments!)</p>
+                <pre>sets = map(set, group_of_three)
+same_items = set.intersection(*sets)</pre>
+                <p>There you go!</p>
+                <hr>
+                <p>“Alright. Thanks for your work! It’ll help us reorganize the rucksacks much faster.”</p>
+                <p>“You’re welcome! Bye for now.”</p>
+                <p>I wonder… When can we explore the jungle?</p>
+            </div>
+        </main>
+    </div>
+    <script src="assets/javascripts/reallyplayer.js"></script>
+</body>
+
+</html>

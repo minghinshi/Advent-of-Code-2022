@@ -36,7 +36,7 @@
                 <p>“By the way…” Kris jotted down the Calorie count. “Each elf has a basket that carries lots of food. We need to group the Calories from the same basket together.”</p>
                 <p>“Got it.”</p>
                 <p>It took us half an hour to get through all the baskets. Some of the food doesn’t have a nutritional label, so we could only guess. (Anyone knows how many Calories a broccoli contains? Tell me in the comments, please!)</p>
-                <p>“And this last one has…” The elf looked around a massive box of candy canes. Like, really big. “5,000 Calories. Okay, here’s where your expertise comes in. I suppose one of you would be enough to handle this task… But now that both of you are here, hopefully it’ll be trivial.”</p>
+                <p>“And this last one has…” The elf looked around a massive box of candy canes. Like, really big. “5,000 Calories. Okay, here’s where your expertise comes into play again.”</p>
                 <p>“Programming?” Kris looked a bit nervous.</p>
                 <p>“Yes, programming! Can you help me find which basket has the most Calories, and how many Calories it contains? Just in case some of us run out of food, we can ask that elf for more.”</p>
                 <p>“Isn’t that the same as…”</p>
@@ -73,30 +73,30 @@
 10000</pre>
                 <p>Each line with a number represents the number of Calories from a food item. Food from the same basket is grouped together and separated by a blank line. So there’s 5 baskets here. (I actually needed to handle more baskets than this, but here’s a smaller example to help you understand!)</p>
                 <p>To get the basket with the most Calories, I need to split up the data into baskets, calculate the total Calories in each basket, and store that in a list. Something like this:</p>
-			<pre>[6000, 4000, 11000, 24000, 10000]</pre>
-			<p>Then I find the maximum value of this list, and we’re done! Not too bad, right? (For now…)</p>
-			<hr>
-			<p>So we did just that, and managed to solve the puzzle in less than 5 minutes. We went back downstairs to report to Captain Elf. (It felt all too familiar…)</p>
-			<p>“Got the answer?”</p>
-			<p>“Yeah, about 67,000 Calories.”</p>
-			<p>If I were to guess, we’re not done yet. There’s always a second part. Every single time.</p>
-			<p>“Hmm, about right. Yeah. Now that I think about it though…”</p>
-			<p>Here it comes…</p>
-			<p>“It’s not a great idea if everyone asks that one elf to share their food. They’ll run out of food really quickly, and then we’ll have no idea what to do. So instead, how about this? Let’s find the top 3 elves carrying the most Calories, and see how many Calories they’ve carried in total. That way, we could have a larger reserve, right?”</p>
-			<p>“Yeah, shouldn’t be too hard to find out. Let’s go back, Kris.”</p>
-			<p>Well… I’m not going to pretend that I’m surprised.</p>
-			<hr>
-			<p>I guess the second part shouldn’t have been that hard, but… I struggled with finding the sum of the 3 largest numbers in the Calories list. At first, I thought that I could get the largest number in the list, add that to the total, and then remove it from the list. If I do that 3 times, I’ll get what I want, right?</p>
-			<p>Well, it works, but… it’s a bit clumsy.</p>
-			<p>That’s when Kris thought of a really good idea. We just need to sort the list in descending order, then take the sum of the first 3 items in the list. It’s really easy to do in Python:</p>
-			<pre>return sum(sorted(list, reversed=True)[:3])</pre>
-			<p>It can be done in just one line. Thanks, Kris!</p>
-			<hr>
-			<p>“Alright, you’re back. How many Calories do they carry?”</p>
-			<p>“Almost 200,000. Should be enough, right?”</p>
-			<p>“Yeah, should be. Then I’ll ask these 3 elves in case we need more food. Thanks for your help! Go take a break now.”</p>
-			<p>We waved goodbye to Captain Elf and went back to our rooms. “Here we go again…” Kris sighed.</p>
-			<p>It’s gonna be another long journey. But maybe… we can do this.</p>
+                <pre>[6000, 4000, 11000, 24000, 10000]</pre>
+                <p>Then I find the maximum value of this list, and we’re done! Not too bad, right? (For now…)</p>
+                <hr>
+                <p>So we did just that, and managed to solve the puzzle in less than 5 minutes. We went back downstairs to report to Captain Elf. (It felt all too familiar…)</p>
+                <p>“Got the answer?”</p>
+                <p>“Yeah, about 67,000 Calories.”</p>
+                <p>If I were to guess, we’re not done yet. There’s always a second part. Every single time.</p>
+                <p>“Hmm, about right. Yeah. Now that I think about it though…”</p>
+                <p>Here it comes…</p>
+                <p>“It’s not a great idea if everyone asks that one elf to share their food. They’ll run out of food really quickly, and then we’ll have no idea what to do. So instead, how about this? Let’s find the top 3 elves carrying the most Calories, and see how many Calories they’ve carried in total. That way, we could have a larger reserve, right?”</p>
+                <p>“Yeah, shouldn’t be too hard to find out. Let’s go back, Kris.”</p>
+                <p>Well… I’m not going to pretend that I’m surprised.</p>
+                <hr>
+                <p>I guess the second part shouldn’t have been that hard, but… I struggled with finding the sum of the 3 largest numbers in the Calories list. At first, I thought that I could get the largest number in the list, add that to the total, and then remove it from the list. If I do that 3 times, I’ll get what I want, right?</p>
+                <p>Well, it works, but… it’s a bit clumsy.</p>
+                <p>That’s when Kris thought of a really good idea. We just need to sort the list in descending order, then take the sum of the first 3 items in the list. It’s really easy to do in Python:</p>
+                <pre>return sum(sorted(list, reversed=True)[:3])</pre>
+                <p>It can be done in just one line. Thanks, Kris!</p>
+                <hr>
+                <p>“Alright, you’re back. How many Calories do they carry?”</p>
+                <p>“Almost 200,000. Should be enough, right?”</p>
+                <p>“Yeah, should be. Then I’ll ask these 3 elves in case we need more food. Thanks for your help! Go take a break now.”</p>
+                <p>We waved goodbye to Captain Elf and went back to our own rooms. “Here we go again…” Kris sighed.</p>
+                <p>It’s gonna be another long journey. But maybe… we can do this.</p>
             </div>
         </main>
     </div>
