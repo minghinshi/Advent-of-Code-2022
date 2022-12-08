@@ -13,9 +13,9 @@ def first_is_highest(list):
 
 def count_visible_trees(list):
     count = 0
-    for i in range(1, len(list)):
+    for cell in list[1:]:
         count += 1
-        if list[i] >= list[0]: 
+        if cell >= list[0]: 
             break
     return count
 
