@@ -11,7 +11,7 @@ def shuffle(number_list, count):
 def apply_ordering(number_list, ordering):
     return [number_list[i] for i in ordering]
 
-def calculate_coordinates(number_list, shuffle_count):
+def calculate_answer(number_list, shuffle_count):
     new_indices = shuffle(number_list, shuffle_count)
     new_list = apply_ordering(number_list, new_indices)
     zero_position = new_list.index(0)
@@ -20,7 +20,7 @@ def calculate_coordinates(number_list, shuffle_count):
 def main():
     with open("Inputs/Day20.txt") as file:
         number_list = [int(line) for line in file]
-    calculate_coordinates(number_list, 1)
-    calculate_coordinates([number * 811589153 for number in number_list], 10)
+    calculate_answer(number_list, 1)
+    calculate_answer([number * 811589153 for number in number_list], 10)
 
 main()
