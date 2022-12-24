@@ -1,4 +1,4 @@
-unit_vectors = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+unit_vectors = (0, 1), (1, 0), (0, -1), (-1, 0)
 
 def add_vectors(*vectors):
     return tuple(map(sum, zip(*vectors)))
